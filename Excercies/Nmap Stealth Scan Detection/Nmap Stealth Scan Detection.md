@@ -6,10 +6,10 @@ In this step, we use Nmap to perform a "half-open" scan. This is considered "ste
 
 Command Executed:
 
-Bash
+ ```yaml
 sudo nmap -sS -p 1-20 192.168.10.100
+```
 -sS: Specifies a TCP SYN (Stealth) scan.
-
 -p 1-20: Targets the first 20 ports to keep the scan focused for the lab.
 
 192.168.10.100: The target IP address.
@@ -21,8 +21,9 @@ To detect this specific behavior, we use a Suricata rule that identifies a high 
 
 Custom Rule added to local.rules:
 
-Bash
+ ```yaml
 alert tcp any any -> $HOME_NET any (msg:"Nmap Stealth Scan Detected"; flags:S; threshold: type threshold, track by_src, count 5, seconds 10; sid:1000001; rev:1;)
+```
 flags:S: Looks specifically for the SYN flag.
 
 threshold: Prevents log flooding by requiring 5 occurrences within 10 seconds from the same source before alerting.
