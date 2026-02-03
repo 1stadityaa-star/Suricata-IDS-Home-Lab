@@ -4,15 +4,15 @@ The goal of this exercise is to detect a TCP SYN (Stealth) Scan—a common recon
 ## 2. Attack Simulation (Kali Linux)
 In this step, we use Nmap to perform a "half-open" scan. This is considered "stealthy" because it never completes the TCP three-way handshake, often bypassing simple logging systems.
 
-Command Executed:
+**Command Executed:**
 
  ```yaml
 sudo nmap -sS -p 1-20 192.168.10.100
 ```
--sS: Specifies a TCP SYN (Stealth) scan.
--p 1-20: Targets the first 20 ports to keep the scan focused for the lab.
+- -sS: Specifies a TCP SYN (Stealth) scan.
+- -p 1-20: Targets the first 20 ports to keep the scan focused for the lab.
 
-192.168.10.100: The target IP address.
+- 192.168.10.100: The target IP address.
 
 [!NOTE] As seen in your Kali terminal, the scan returned several "filtered" ports. This indicates that while the host is up, a firewall or IDS is likely dropping the packets or preventing a direct response.
 
