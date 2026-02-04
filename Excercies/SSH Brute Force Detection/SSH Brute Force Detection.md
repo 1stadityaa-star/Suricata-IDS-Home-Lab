@@ -3,11 +3,11 @@
 This exercise demonstrates how to identify and alert on SSH Brute Force attempts. By using Hydra to simulate a high-frequency login attack, I configured Suricata to trigger alerts based on connection thresholds, providing real-time visibility through Splunk.
 
 ## 🛠️ Environment Configuration
-- ##Attacker Machine##: Kali Linux (192.168.10.250)
+- **Attacker Machine**: Kali Linux (192.168.10.250)
 
-- ##Target Machine##: Ubuntu Server (192.168.10.10)
+- **Target Machine##: Ubuntu Server (192.168.10.10)
 
-- ##Tools##: Hydra, Suricata, Splunk
+- **Tools**: Hydra, Suricata, Splunk
 
 ## 1. Attack Simulation (Hydra)
 I used Hydra, a powerful network login cracker, to perform a dictionary attack against the SSH service of the target machine. This involves rapid-fire login attempts using a list of common passwords.
