@@ -28,7 +28,7 @@ Standard SSH traffic is encrypted, but the behavior of a brute force attack—mu
 - **Custom Rule added to local.rules**:
 
 ```
-alert tcp any any -> $HOME_NET 22 (msg:"SSH Brute Force Attempt Detected"; flow:to_server; flags:S; threshold: type both, track by_src, count 5, seconds 30; sid:1000002; rev:1;)
+alert tcp any any -> $HOME_NET 22 (msg:"SSH Brute Force Attempt Detected"; flags:S; threshold: type both, track by_src, count 5, seconds 30; sid:1000002; rev:1;)
 ```
 - **flow**:to_server: Monitors traffic heading toward the SSH server.
 
