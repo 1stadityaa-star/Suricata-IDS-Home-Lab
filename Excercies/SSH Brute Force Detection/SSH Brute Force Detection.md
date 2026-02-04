@@ -5,7 +5,7 @@ This exercise demonstrates how to identify and alert on SSH Brute Force attempts
 ## 🛠️ Environment Configuration
 - **Attacker Machine**: Kali Linux (192.168.10.250)
 
-- **Target Machine##: Ubuntu Server (192.168.10.10)
+- **Target Machine**: Ubuntu Server (192.168.10.10)
 
 - **Tools**: Hydra, Suricata, Splunk
 
