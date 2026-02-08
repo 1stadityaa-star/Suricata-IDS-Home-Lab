@@ -50,7 +50,7 @@ alert tcp 192.168.10.250 any -> 192.168.10.100 any (msg:"Nmap Stealth Scan Detec
 ```
 
 - **2. SSH Brute Force Detection**
-- ```
+```
 alert tcp 192.168.10.250 any -> 192.168.10.10 22 (msg:"SSH Brute Force Attempt Detected"; flags:S; threshold: type threshold...)
 ```
 
