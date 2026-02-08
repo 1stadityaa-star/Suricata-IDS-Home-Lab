@@ -54,7 +54,7 @@ alert tcp 192.168.10.250 any -> 192.168.10.100 any (msg:"Nmap Stealth Scan Detec
 alert tcp 192.168.10.250 any -> 192.168.10.10 22 (msg:"SSH Brute Force Attempt Detected"; flags:S; threshold: type threshold...)
 ```
 
--**3. Metasploit Reverse Shell Detection**
+- **3. Metasploit Reverse Shell Detection**
 ```
 alert tcp any any -> 192.168.10.100 any (msg:"Metasploit Reverse TCP Shell Detected"; content:"|bf 00 00 00 00 56 57 89|")
 ```
