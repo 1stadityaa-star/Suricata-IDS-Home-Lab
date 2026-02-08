@@ -10,19 +10,20 @@ alert http any any -> any any (msg:"SQL Injection Attempt Detected"; content:"UN
 ## 3. Attack Simulation (The Challenge)
 The attack was simulated from a Kali Linux machine (192.168.10.250).
 
-- **Initial Hurdle** : Direct curl requests failed because the target Ubuntu server was not running an active web service on port 80.
+- **Initial Hurdle**: Direct curl requests failed because the target Ubuntu server was not running an active web service on port 80.
 
-- ** The Fix ** : I utilized Netcat on the Ubuntu server (sudo nc -l -p 80) to act as a temporary listener, allowing the TCP handshake to complete so Suricata could inspect the full HTTP header.
+- **The Fix**: I utilized Netcat on the Ubuntu server (sudo nc -l -p 80) to act as a temporary listener, allowing the TCP handshake to complete so Suricata could inspect the full HTTP header.
 
 ## 4. Attack Execution
 I used curl with URL Encoding to deliver the payload. Replacing spaces with %20 ensured the terminal handled the string correctly while the IDS decoded it for matching.
 
-Bash
+```
 curl -v "http://192.168.10.10/login.php?user='%20UNION%20SELECT%20NULL,NULL,NULL--"
+```
 ## 5. Evidence & Analysis
 Ubuntu Side: The attack was successfully captured by the netcat listener.
 
-Splunk Side: As seen in Screenshot (326).jpg, the alert was successfully indexed.
+-**Splunk Side**: As seen in Screenshot (326).jpg, the alert was successfully indexed.
 
 Index: suricata
 
