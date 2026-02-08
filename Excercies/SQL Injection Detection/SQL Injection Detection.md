@@ -23,17 +23,10 @@ curl -v "http://192.168.10.10/login.php?user='%20UNION%20SELECT%20NULL,NULL,NULL
 ## 5. Evidence & Analysis
 Ubuntu Side: The attack was successfully captured by the netcat listener.
 
--**Splunk Side**: As seen in Screenshot (326).jpg, the alert was successfully indexed.
+- **Splunk Side**: As seen in Screenshot (326).jpg, the alert was successfully indexed.
 
-Index: suricata
+- **Index**: suricata
 
-Source: /var/log/suricata/fast.log
+- **Source**: /var/log/suricata/fast.log
 
-Key Finding: The alert correctly identified the source IP (192.168.10.250) and the destination port (80).
-
-🛠️ Pro-Tip for your Project Summary
-In your documentation, emphasize that you had to pivot from a standard attack to a manual listener setup. This demonstrates that you understand:
-
-The OSI Model: You knew that without a Layer 4 (TCP) connection, the Layer 7 (HTTP) payload would never be sent.
-
-Traffic Normalization: You proved that Suricata can decode URL encoding to find hidden malicious strings.
+- **Key Finding**: The alert correctly identified the source IP (192.168.10.250) and the destination port (80).
