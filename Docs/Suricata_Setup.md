@@ -3,7 +3,7 @@ This guide outlines the core configuration steps taken to deploy Suricata as a N
 ## 🛠️ Environment Details
 Operating System: Ubuntu Server (Running in Oracle VirtualBox)
 
-Configuration Path: /etc/suricata/suricata.yaml
+- **Configuration Path**: /etc/suricata/suricata.yaml
 
 Rules Path: /etc/suricata/rules/local.rules
 
