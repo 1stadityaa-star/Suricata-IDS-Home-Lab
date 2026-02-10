@@ -1,5 +1,5 @@
 
-- **alert tcp 192.168.10.250 any -> 192.168.10.100 any (msg:"Nmap Stealth Scan Detected"; flags:S; threshold: type threshold, track by_src, count 5, seconds 10; sid:100001; rev:1;) **
+**alert tcp 192.168.10.250 any -> 192.168.10.100 any (msg:"Nmap Stealth Scan Detected"; flags:S; threshold: type threshold, track by_src, count 5, seconds 10; sid:100001; rev:1;)
 
 alert tcp 192.168.10.250 any -> 192.168.10.10 22 (msg:"SSH Brute Force Attempt Detected"; flags:S; threshold: type threshold, track by_src, count 10, seconds 30; sid:100002; rev:1;)
 
